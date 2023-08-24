@@ -1,69 +1,70 @@
 import random
+from pprint import pprint
 
 print("Hello, welcome to my random DnD Character Maker")
 print("-----------------------------------------------")
 
 
 races = {
-    'Dragonborn': ['Chromatic Dragonborn', 'Draconblood Dragonborn', 'Gem Dragonborn', 'Metallic Dragonborn', 'Ravenite Dragonborn'],
-    'Dwarf': ['Dwarf', 'Hill Dwarf', 'Mountain Dwarf', 'Mark of Warding Dwarf'], 
-    'Elf': ['Elf', 'Aereni High Elf', 'Aereni Wood Elf', 'Dark Elf', 'High Elf', 'Mark of Shadow Elf', 'Pallid Elf', 'Valenar High Elf', 'Valenar Wood Elf', 'Wood Elf'], 
-    'Gnome':['Gnome', 'Forest Gnome', 'Mark of Scribing Gnome', 'Rock Gnome'], 
-    'Half-Elf': ['Elf', 'Aquatic Half-Elf', 'Drow Half-Elf', 'High Half-Elf', 'Mark of Detection Half-Elf', 'Mark of Storm Half-Elf', 'Wood Half-Elf'], 
-    'Halfing': ['Halfing', 'Ghostwise Halfing', 'Lightfoot Halfing', 'Lotusden Halfing', 'Mark of Healing Halfing', 'Mark of Hospitality Halfing', 'Stout Halfing'], 
-    'Half-Orc': ['Half-Orc', 'Mark of Finding Half-Orc'],
-    'Human': ['Human', 'Mark of Finding Human', 'Mark of Handling Human', 'Mark of Making Human', 'Mark of Passage Human', 'Mark of Sentinel Human', 'Variant Human'], 
-    'Tiefling': ['Tiefling', 'Variant Tiefling'], 
-    'Aarakocra': ['Aarakocra'], 
-    'Aasimar': ['Aasimar'], 
-    'Air Genasi': ['Air Genasi'], 
-    'Bugbear': ['Bugbear'], 
-    'Changling': ['Changling'], 
-    'Deep Gnome': ['Deep Gnome'], 
-    'Duergar': ['Duergar'], 
-    'Earth Genasi': ['Earth Genasi'], 
-    'Eladrin': ['Eladrin'], 
-    'Fairy': ['Fairy'], 
-    'Firebolg': ['Firebolg'], 
-    'Fire Genasi': ['Fire Genasi'], 
-    'Githyanki': ['Githyanki'], 
-    'Githzerai': ['Githzerai'], 
-    'Goblin': ['Goblin'], 
-    'Goliath': ['Goliath'], 
-    'Harengon': ['Harengon'], 
-    'Hobgoblin': ['Hobgoblin'], 
-    'Kenku': ['Kenku'], 
-    'Kobold': ['Kobold'], 
-    'Lizardfolk': ['Lizardfolk'], 
-    'Minotaur': ['Minotaur'], 
-    'Orc': ['Orc'], 
-    'Satyr': ['Satyr'], 
-    'Sea Elf': ['Sea Elf'], 
-    'Shadar-kai': ['Shadar-kai'], 
-    'Shifter': ['Shifter'], 
-    'Tabaxi': ['Tabaxi'], 
-    'Tortle': ['Tortle'], 
-    'Triton': ['Triton'], 
-    'Water Genasi': ['Water Genasi'], 
-    'Yuan-ti': ['Yuan-ti'], 
-    'Kender': ['Kender'], 
-    'Astral Elf': ['Astral Elf'], 
-    'Autognome': ['Autognome'], 
-    'Giff': 'Giff', 
-    'Hadozee': ['Hadozee'], 
-    'Plasmoid': ['Plasmoid'], 
-    'Thri-kreen': 'Thri-kreen', 
-    'Owlin': ['Owlin'], 
-    'Leonin': ['Leonin'], 
-    'Kalashtar': ['Kalashtar'], 
-    'Warforged': 'Warforged', 
-    'Verdan': ['Verdan'], 
-    'Loxodon': ['Loxodon'], 
-    'Simic Hybrid': ['Simic Hybrid'], 
-    'Vedalken': ['Vedalken'], 
-    'Feral Tiefling': ['Feral Tiefling'], 
-    'Locathah': ['Locathah'], 
-    'Grung': ['Grung'],
+    'Chromatic Dragonborn', 'Draconblood Dragonborn', 'Gem Dragonborn', 'Metallic Dragonborn', 'Ravenite Dragonborn',
+    'Dwarf', 'Hill Dwarf', 'Mountain Dwarf', 'Mark of Warding Dwarf', 
+    'Elf', 'Aereni High Elf', 'Aereni Wood Elf', 'Dark Elf', 'High Elf', 'Mark of Shadow Elf', 'Pallid Elf', 'Valenar High Elf', 'Valenar Wood Elf', 'Wood Elf', 
+    'Gnome', 'Forest Gnome', 'Mark of Scribing Gnome', 'Rock Gnome', 
+    'Half-Elf', 'Aquatic Half-Elf', 'Drow Half-Elf', 'High Half-Elf', 'Mark of Detection Half-Elf', 'Mark of Storm Half-Elf', 'Wood Half-Elf', 
+   'Halfing', 'Ghostwise Halfing', 'Lightfoot Halfing', 'Lotusden Halfing', 'Mark of Healing Halfing', 'Mark of Hospitality Halfing', 'Stout Halfing', 
+    'Half-Orc', 'Mark of Finding Half-Orc',
+    'Human', 'Mark of Finding Human', 'Mark of Handling Human', 'Mark of Making Human', 'Mark of Passage Human', 'Mark of Sentinel Human', 'Variant Human', 
+    'Tiefling', 'Variant Tiefling', 
+    'Aarakocra', 
+    'Aasimar', 
+    'Air Genasi', 
+    'Bugbear', 
+    'Changling', 
+    'Deep Gnome', 
+    'Duergar', 
+    'Earth Genasi', 
+    'Eladrin', 
+    'Fairy', 
+    'Firebolg', 
+    'Fire Genasi', 
+    'Githyanki', 
+    'Githzerai', 
+    'Goblin', 
+    'Goliath', 
+    'Harengon', 
+    'Hobgoblin', 
+    'Kenku', 
+    'Kobold', 
+    'Lizardfolk', 
+    'Minotaur', 
+    'Orc', 
+    'Satyr', 
+    'Sea Elf', 
+    'Shadar-kai', 
+    'Shifter', 
+    'Tabaxi', 
+    'Tortle', 
+    'Triton', 
+    'Water Genasi', 
+    'Yuan-ti', 
+    'Kender', 
+    'Astral Elf', 
+    'Autognome', 
+    'Giff', 
+    'Hadozee', 
+    'Plasmoid', 
+    'Thri-kreen', 
+    'Owlin', 
+    'Leonin', 
+    'Kalashtar', 
+    'Warforged', 
+    'Verdan', 
+    'Loxodon', 
+    'Simic Hybrid', 
+    'Vedalken', 
+    'Feral Tiefling', 
+    'Locathah', 
+    'Grung',
 }
 
 classes = {
@@ -108,8 +109,9 @@ def total_stat():
 
 #This is too bring all the previous code together for the character to be complete
 def generate_character():
-    race = random.choice(list(races.keys()))
+    race = random.choice(list(races))
     char_class = random.choice(list(classes.keys()))
+    sub_class = random.choice(classes[char_class])
     background = random.choice(backgrounds)
     strength = total_stat()
     dexterity = total_stat()
@@ -121,6 +123,7 @@ def generate_character():
     character = {
         'Race': race,
         'Class': char_class,
+        'Sub Class': sub_class,
         'Background': background,
         'Strength': strength,
         'Dexterity': dexterity,
@@ -135,6 +138,7 @@ def generate_character():
 def print_character(character):
     print("Race:", character['Race'])
     print("Class:", character['Class'])
+    print("Sub Class:", character['Sub Class'])    
     print("Background:", character['Background'])
     print("Strength:", character['Strength'])
     print("Dexterity:", character['Dexterity'])
@@ -148,3 +152,5 @@ character = generate_character()
 
 print("Random Character:")
 print_character(character)
+
+#pprint(character)
