@@ -1,5 +1,4 @@
 import random
-from pprint import pprint
 
 print("Hello, welcome to my random DnD Character Maker")
 print("-----------------------------------------------")
@@ -152,5 +151,3 @@ character = generate_character()
 
 print("Random Character:")
 print_character(character)
-
-#pprint(character)
