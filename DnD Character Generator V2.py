@@ -86,7 +86,7 @@ classes = {
 backgrounds = ['Acolyte', 'Anthropologist', 'Achaeologist', 'Astral Drifter', 'Athlete', 'Azorius Functionary', 'Boros Legionnaire', 'Celebrity Adventurers Scion', 'Charlatan', 'City Watch', 'Clan Crafter', 'Cloistered Scholar', 'Cloistered Scholar', 'Courtier', 'Criminal', 'Dimir Operative', 'Entertainer', 'Faceless', 'Faction Agent', 'Failed Merchant', 'Far T raveler', 'Feylost', 'Fisher', 'Folk Hero', 'Gambler', 'Gladiator', 'Golgari Agent', 'Grinner', 'Gruul Anarch', 'Guild Artisan', 'Haunted One', 'Hermit', 'House Agent', 'Inheritor', 'Investigator', 'Izzet Engineer', 'Knight', 'Knight of Solamnia', "Knight of the Order", 'Lorehold Student', 'Mage of High Sorcery', 'Marine', 'Mercenary Veteran', 'Noble', 'Orzhov Representative', 'Outlander', 'Pirate', 'Plaintiff', 'Prismari Student', 'Quandrix Student', 'Rakdos Cultist', 'Rival Intern', 'Sage', 'Sailor', 'Selesnya Initiate', 'Shipwright', 'Silverquill Student', 'Simic Scientist', 'Smuggler', 'Soldier', 'Spy', 'Urban Bounty Hunter', 'Urchin', 'Uthgardt Tribe Member', 'Volstrucker Agent', 'Waterdhavian Noble', 'Wildspacer', 'Witchlight Hand', 'Witherbloom Student']
 
 
-#simply rolling 4 six sided dice, it adds them up then dropping the lowest roll, for a maximum of 18 and a minimum of 3, however the total_stat is too make sure your minimum is at least 8
+# simply rolling 4 six sided dice, it adds them up then dropping the lowest roll
 def roll_dice():
     dice_rolls = [random.randint(1,6) for _ in range(4)]
     min_value = min(dice_rolls)
@@ -96,7 +96,7 @@ def roll_dice():
     return dice_rolls
 
 
-#This is too make sure any of the stats are not below 8, when rolling for stats in dnd you'd typically be told to reroll if its below a certain value. In this case its 8
+#  takes the total from roll_dice and rerolls it if total is below 8
 def total_stat():
     while True:
         desired_number = 8
@@ -106,7 +106,7 @@ def total_stat():
             return each_roll, totalSum
 
 
-#This is too bring all the previous code together for the character to be complete
+# bring everything together to make the character
 def generate_character():
     race = random.choice(list(races))
     char_class = random.choice(list(classes.keys()))
