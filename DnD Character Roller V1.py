@@ -3,6 +3,7 @@ import random
 print("Hello, welcome to my random DnD Character Maker")
 print("-----------------------------------------------")
 
+# list of DnD 5e Races
 races = {
     'Chromatic Dragonborn', 'Draconblood Dragonborn', 'Gem Dragonborn', 'Metallic Dragonborn', 'Ravenite Dragonborn',
     'Dwarf', 'Hill Dwarf', 'Mountain Dwarf', 'Mark of Warding Dwarf', 
@@ -65,6 +66,8 @@ races = {
     'Grung',
 }
 
+
+# list of DnD 5e Classes
 classes = {
     'Barbarian': ['Path of the Ancestral Guardian', 'Path of the Battlerager', 'Path of the Beast', 'Path of the Berserker', 'Path of the Storm Herald', 'Path of the Totem Warrior', 'Path of the Zealot', 'Path of Wild Magic'],
     'Bard': ['College of Creation', 'College of Eloquence', 'College of Glamour', 'College of Lore', 'College of Spirits', 'College of Swords', 'College of Valor', 'College of Whispers'],
@@ -82,8 +85,10 @@ classes = {
     'Blood Hunter': ['Order of Ghostslayer', 'Order of Lycan', 'Order of the Mutant', 'Order of the Profane Soul']
 }
 
+# list of DnD 5e Backgrounds
 backgrounds = ['Acolyte', 'Anthropologist', 'Achaeologist', 'Astral Drifter', 'Athlete', 'Azorius Functionary', 'Boros Legionnaire', 'Celebrity Adventurers Scion', 'Charlatan', 'City Watch', 'Clan Crafter', 'Cloistered Scholar', 'Cloistered Scholar', 'Courtier', 'Criminal', 'Dimir Operative', 'Entertainer', 'Faceless', 'Faction Agent', 'Failed Merchant', 'Far T raveler', 'Feylost', 'Fisher', 'Folk Hero', 'Gambler', 'Gladiator', 'Golgari Agent', 'Grinner', 'Gruul Anarch', 'Guild Artisan', 'Haunted One', 'Hermit', 'House Agent', 'Inheritor', 'Investigator', 'Izzet Engineer', 'Knight', 'Knight of Solamnia', "Knight of the Order", 'Lorehold Student', 'Mage of High Sorcery', 'Marine', 'Mercenary Veteran', 'Noble', 'Orzhov Representative', 'Outlander', 'Pirate', 'Plaintiff', 'Prismari Student', 'Quandrix Student', 'Rakdos Cultist', 'Rival Intern', 'Sage', 'Sailor', 'Selesnya Initiate', 'Shipwright', 'Silverquill Student', 'Simic Scientist', 'Smuggler', 'Soldier', 'Spy', 'Urban Bounty Hunter', 'Urchin', 'Uthgardt Tribe Member', 'Volstrucker Agent', 'Waterdhavian Noble', 'Wildspacer', 'Witchlight Hand', 'Witherbloom Student']
 
+# Pulls from the previous lists and also gets the numbers for stats
 def generate_character():
     race = random.choice(list(races))
     char_class = random.choice(list(classes.keys()))
@@ -96,6 +101,7 @@ def generate_character():
     wisdom = random.randint(8, 18)
     charisma = random.randint(8, 18)
 
+    # puts the generated character together
     character = {
         'Race': race,
         'Class': char_class,
@@ -111,6 +117,7 @@ def generate_character():
 
     return character
 
+# takes the generated character and puts it in a form more condensed for the print function
 def print_character(character):
     print("Race:", character['Race'])
     print("Class:", character['Class'])
